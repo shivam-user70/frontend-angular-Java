@@ -1,0 +1,22 @@
+pipeline {  
+    agent any
+    stages{
+        stage('pull'){
+        steps{
+            git branch :'main', url:'https://github.com/shivam-user70/frontend-angular-Java.git'
+        }
+    }
+    stages('build'){
+        steps{
+            sh''' npm install
+            ng build '''
+        }
+    }
+    stage ('deploy'){
+        steps{
+            sh ''' aws s3 cp -recursive dist/angular-frontend/ s3://cbz-frontend-project-bux-shivam-17/
+            '''
+        }
+    }
+}
+}
