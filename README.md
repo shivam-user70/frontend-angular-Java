@@ -8,6 +8,8 @@ This guide provides step-by-step instructions for setting up an Angular project 
 sudo apt update
 sudo apt install nodejs npm
 ```
+
+
 ## Step 2: Check Node.js and npm versions
 
 ```bash
